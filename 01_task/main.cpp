@@ -2,7 +2,7 @@
 #include "modifiers.h"
 
 void demonstrateBasicDifferences() {
-    int a = 10;
+    int a=10;
     std::cout << "Before: a = " << a << std::endl;
     std::cout << "Address of a: " << &a << std::endl;
     modifyByValue(a);

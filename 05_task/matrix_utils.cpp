@@ -1,6 +1,5 @@
 #include "matrix_utils.h"
 #include <iostream>
-#include <algorithm>
 
 int** createMatrix(int rows, int cols) {
     int** matrix = new int*[rows];
@@ -38,15 +37,25 @@ void freeMatrix(int** matrix, int rows) {
     delete [] matrix;
 }
 
-void resizeMatrix(int**& matrix, int& rows, int& cols, int newRows, int newCols) {
+void resizeMatrix(int**& matrix, int& rows, int& cols,int newRows, int newCols) {
     int** newMatrix = createMatrix(newRows, newCols);
-
-    int rowsToCopy = std::min(rows, newRows);
-    int colsToCopy = std::min(cols, newCols);
-
-    for (int i=0; i<rowsToCopy; i++) {
-        for (int j = 0; j<colsToCopy; j++) {
-            newMatrix[i][j] = matrix[i][j];
+    int oldRows;
+    int oldCols;
+    if (rows<newRows) {
+        oldRows=rows;
+    }
+    else {
+        oldRows=newRows;
+    }
+    if (cols<newCols) {
+        oldCols=cols;
+    }
+    else {
+        oldCols=newCols;
+    }
+    for (int i=0; i<oldRows; i++) {
+        for (int j=0; j<oldCols; j++) {
+            newMatrix[i][j]=matrix[i][j];
         }
     }
     freeMatrix(matrix, rows);

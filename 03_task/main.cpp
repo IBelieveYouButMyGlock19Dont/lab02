@@ -92,6 +92,6 @@ int main() {
     std::cout << '\n';
     std::cout << "sizeof(staticArr) = " << sizeof(staticArr) << " bytes" << std::endl;
     std::cout << "sizeof(dynamicArr) = " << sizeof(dynamicArr) << " bytes" << std::endl;
-    delete [] dynamicArr;
+    delete[] dynamicArr;
     return 0;
 }

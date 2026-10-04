@@ -40,6 +40,7 @@ int main() {
     std::cout << "\nCalling reallocateArray(data, size):" << std::endl;
     std::cout << "Address before reallocation: " << data << std::endl;
     reallocateArray(data, size);
+
     std::cout << "Address after reallocation: " << data << std::endl;
     std::cout << "New size: " << size << std::endl;
     std::cout << "New contents: ";
